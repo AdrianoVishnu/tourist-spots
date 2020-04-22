@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Spot</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700, 900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <header class="header">
+                <h1>Tourist Spots</h1>
+                <div class="header__information">
+                    <h2>Challenge</h2>
+                    <img src="assets/img/snowman.png" alt="Tourist Spots">
+                </div>
+            </header>
+            <div id="map"></div>
+
+            <section class="favorites">
+                <h2>Favorites</h2>
+
+                <article class="favorites__item">
+                    <header>
+                        <div class="favorites__item--pic">
+                            <img src="assets/img/mercado.jpg" alt="">
+                        </div>
+                        <div class="favorites__item--titles">
+                            <h1 class="favorites__item--titles--title">
+                                Mercado Municipal de Curitiba
+                            </h1>
+                            <h2 class="favorites__item--titles--subtitle">
+                                Centro, Curitiba - Brasil
+                            </h2>
+                        </div>
+                        <div class="favorites__item--fav">
+                            <i class="icon-fav"></i>
+                        </div>
+                    </header>
+                    <main>
+                        <div class="favorites__item--details">
+                            <p class="favorites__item--details--category">
+                                Category
+                            </p>
+                            <p class="favorites__item--details--category-name">
+                                Market
+                            </p>
+                        </div>
+                    </main>
+                </article>
+                <article class="favorites__item">
+                    <header>
+                        <div class="favorites__item--pic">
+                            <img src="assets/img/arena.jpg" alt="">
+                        </div>
+                        <div class="favorites__item--titles">
+                            <h1 class="favorites__item--titles--title">
+                                Arena da Baixada
+                            </h1>
+                            <h2 class="favorites__item--titles--subtitle">
+                                Rebouças, Curitiba - Brasil
+                            </h2>
+                        </div>
+                        <div class="favorites__item--fav">
+                            <i class="icon-fav"></i>
+                        </div>
+                    </header>
+                    <main>
+                        <div class="favorites__item--details">
+                            <p class="favorites__item--details--category">
+                                Category
+                            </p>
+                            <p class="favorites__item--details--category-name">
+                                Sports
+                            </p>
+                        </div>
+                    </main>
+                </article>
+            </section>
+        </div>
+    </div>
+    
+    <script src="assets/js/main.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADSUlAo9RWyvOd1b4Ayfvjq09nivfNM80&callback=initMap" type="text/javascript"></script>
+</body>
+</html>
