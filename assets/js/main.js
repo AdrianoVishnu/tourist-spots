@@ -14,10 +14,24 @@ function initMap() {
     //Click on map
     google.maps.event.addListener(map, 'click', function (event) {
         var title = document.getElementById('title').value;
-        addMarker({
-            coords: event.latLng,
-            content: '<h1>'+title+'</h1>'
-        });
+        var newCenter = event.latLng;
+        var options = {                                
+            lat: newCenter.lat(),
+            lng: newCenter.lng()            
+        }
+        
+        if(title != ""){
+            addMarker({
+                coords: newCenter,
+                content: '<h1>'+title+'</h1>'
+            });
+        } else {
+            addMarker({
+                coords: newCenter,               
+            });
+        }
+
+        map.setCenter(new google.maps.LatLng(options));
     });
 
 
@@ -65,14 +79,6 @@ function initMap() {
 
             marker.addListener('click', function () {
                 infoWindow.open(map, marker);
-            });
-
-            marker.addListener('mouseover', function () {
-                infoWindow.open(map, marker);
-            });
-
-            marker.addListener('mouseout', function () {
-                infoWindow.close();
             });
         }
     }

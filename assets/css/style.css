@@ -80,9 +80,9 @@ body {
     background-repeat: no-repeat;    
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z' fill='%2310159a'/%3E%3C/svg%3E");
 }
-#map button.gm-ui-hover-effect {
+/* #map button.gm-ui-hover-effect {
     display: none !important;
-}
+} */
 
 .favorites {
     display: block;
