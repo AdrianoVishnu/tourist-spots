@@ -12,11 +12,9 @@ function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), options);
 
     //Click on map
-    google.maps.event.addListener(map, 'click', function (event) {
-        var title = document.getElementById('title').value;
+    google.maps.event.addListener(map, 'click', function (event) {        
         addMarker({
-            coords: event.latLng,
-            content: '<h1>'+title+'</h1>'
+            coords: event.latLng
         });
     });
 
@@ -66,7 +64,7 @@ function initMap() {
             marker.addListener('click', function () {
                 infoWindow.open(map, marker);
             });
-
+            
             marker.addListener('mouseover', function () {
                 infoWindow.open(map, marker);
             });
