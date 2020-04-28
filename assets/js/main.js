@@ -22,17 +22,24 @@ function initMap() {
             lat: newCenter.lat(),
             lng: newCenter.lng()            
         }
+        document.querySelector('#createMarker').addEventListener('click', function(){
+            console.log(newCenter);
+            var title = document.querySelector('#title').value;
+
+            if(title != ""){
+                addMarker({
+                    coords: newCenter,
+                    content: '<h1>'+title+'</h1>'
+                });
+            } else {
+                addMarker({
+                    coords: newCenter,               
+                });
+            }
+
+            infoBox.style.display = 'none';
+        });
         
-        // if(title != ""){
-        //     addMarker({
-        //         coords: newCenter,
-        //         content: '<h1>'+title+'</h1>'
-        //     });
-        // } else {
-        //     addMarker({
-        //         coords: newCenter,               
-        //     });
-        // }
 
         map.setCenter(new google.maps.LatLng(options));
     });
