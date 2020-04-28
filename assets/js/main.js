@@ -5,17 +5,44 @@ function initMap() {
         center: {
             lat: -25.4413569,
             lng: -49.2740054
-        }
+        },
+        disableDefaultUI: true
     }
 
     // Map
     var map = new google.maps.Map(document.getElementById('map'), options);
 
     //Click on map
-    google.maps.event.addListener(map, 'click', function (event) {        
-        addMarker({
-            coords: event.latLng
+    google.maps.event.addListener(map, 'click', function (event) {
+        var infoBox = document.querySelector('.map__wrapper-map-info--map-box');
+        infoBox.style.display = 'flex';
+
+        document.querySelector('#title').value = '';
+
+        var newCenter = event.latLng;
+        var options = {                                
+            lat: newCenter.lat(),
+            lng: newCenter.lng()            
+        }
+
+        document.querySelector('#createMarker').addEventListener('click', function(){            
+            title = document.querySelector('#title').value;
+            category = document.querySelector('#category').value;
+            if(title != ""){
+                addMarker({
+                    coords: newCenter,
+                    content: `Title: ${title} <br/> Category: ${category}`
+                });
+            } else {
+                addMarker({
+                    coords: newCenter,               
+                });
+            }
+            infoBox.style.display = 'none';
         });
+        
+
+        map.setCenter(new google.maps.LatLng(options));
     });
 
 
@@ -63,14 +90,6 @@ function initMap() {
 
             marker.addListener('click', function () {
                 infoWindow.open(map, marker);
-            });
-            
-            marker.addListener('mouseover', function () {
-                infoWindow.open(map, marker);
-            });
-
-            marker.addListener('mouseout', function () {
-                infoWindow.close();
             });
         }
     }
