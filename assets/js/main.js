@@ -5,7 +5,8 @@ function initMap() {
         center: {
             lat: -25.4413569,
             lng: -49.2740054
-        }
+        },
+        disableDefaultUI: true
     }
 
     // Map
@@ -13,23 +14,25 @@ function initMap() {
 
     //Click on map
     google.maps.event.addListener(map, 'click', function (event) {
-        var title = document.getElementById('title').value;
+        var infoBox = document.querySelector('.map__wrapper-map-info--map-box');
+        infoBox.style.display = 'flex';
+
         var newCenter = event.latLng;
         var options = {                                
             lat: newCenter.lat(),
             lng: newCenter.lng()            
         }
         
-        if(title != ""){
-            addMarker({
-                coords: newCenter,
-                content: '<h1>'+title+'</h1>'
-            });
-        } else {
-            addMarker({
-                coords: newCenter,               
-            });
-        }
+        // if(title != ""){
+        //     addMarker({
+        //         coords: newCenter,
+        //         content: '<h1>'+title+'</h1>'
+        //     });
+        // } else {
+        //     addMarker({
+        //         coords: newCenter,               
+        //     });
+        // }
 
         map.setCenter(new google.maps.LatLng(options));
     });

@@ -16,8 +16,22 @@
                     <img src="assets/img/snowman.png" alt="Tourist Spots">
                 </div>
             </header>
-            <div id="map"></div>
-            <input type="text" id="title">
+            <section class="map__wrapper">
+                <div id="map"></div>
+
+                <div class="map__wrapper-map-info--map-box">                    
+                    <input type="text" id="title">
+                    <select name="category" id="category">
+                        <option value="Market">Market</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Landmark">Landmark</option>
+                        <option value="Stadium">Stadium</option>
+                    </select>
+                    <button type="submit" onclick="createMarker();">Cadastrar</button>
+                </div>
+
+            </section>
+
             <section class="favorites">
                 <h2>Favorites</h2>
 
