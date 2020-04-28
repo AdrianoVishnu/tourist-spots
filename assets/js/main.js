@@ -17,15 +17,16 @@ function initMap() {
         var infoBox = document.querySelector('.map__wrapper-map-info--map-box');
         infoBox.style.display = 'flex';
 
+        document.querySelector('#title').value = '';
+
         var newCenter = event.latLng;
         var options = {                                
             lat: newCenter.lat(),
             lng: newCenter.lng()            
         }
-        document.querySelector('#createMarker').addEventListener('click', function(){
-            console.log(newCenter);
-            var title = document.querySelector('#title').value;
 
+        document.querySelector('#createMarker').addEventListener('click', function(){            
+            title = document.querySelector('#title').value;
             if(title != ""){
                 addMarker({
                     coords: newCenter,
@@ -36,7 +37,6 @@ function initMap() {
                     coords: newCenter,               
                 });
             }
-
             infoBox.style.display = 'none';
         });
         
