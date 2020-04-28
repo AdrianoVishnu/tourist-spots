@@ -27,10 +27,11 @@ function initMap() {
 
         document.querySelector('#createMarker').addEventListener('click', function(){            
             title = document.querySelector('#title').value;
+            category = document.querySelector('#category').value;
             if(title != ""){
                 addMarker({
                     coords: newCenter,
-                    content: '<h1>'+title+'</h1>'
+                    content: `Title: ${title} <br/> Category: ${category}`
                 });
             } else {
                 addMarker({
